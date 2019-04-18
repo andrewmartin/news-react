@@ -4,9 +4,11 @@ This is a demo application using the [News API](https://newsapi.org/) service. I
 
 [Demo](http://am-news.s3-website-us-east-1.amazonaws.com/)
 
-It includes some customizations and is branched from [`create-react-app`](https://github.com/facebook/create-react-app). See below for an explanation of the structure of the application and the packages chosen.
+This application uses `React Router` to manage the routes and maintain the search state in the URL, as it might occur in a production application.
 
 It should be noted that there are some reasonable defaults here to demonstrate a production app setup. For example, `React Router` and `Connected React Router` are included to handle route handling and dispatching actions on route changes––even though this application only has one route. These inclusions are merely to demonstrate a reasonable baseline and expectation / plans for a production application, and are not therein absolutely required for requirements of this demo application.
+
+This app includes some customizations and is branched from [`create-react-app`](https://github.com/facebook/create-react-app). See below for an explanation of the structure of the application and the packages chosen.
 
 ## Quickstart
 
