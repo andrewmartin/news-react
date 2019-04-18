@@ -12,7 +12,7 @@ export default class Search extends Component {
     this.state = {
       q: '',
       sortBy: '',
-      hasSearched: true, // only show tooltip after we've searched once
+      hasSearched: false, // only show tooltip after we've searched once
     };
 
     this.search = createRef(); // only needed for <Tooltip /> example
