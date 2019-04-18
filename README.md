@@ -17,6 +17,19 @@ This app includes some customizations and is branched from [`create-react-app`](
 
 _We are using `husky` to enforce the linting rules before committing. Invalid lint rules will attempted to be fixed if found, and prevented from being committed._
 
+## Project Features
+
+- I added and am using a really nice lint pattern setup I prefer and rolled in my customized setup for all of this.
+- Though it wasn't requested, I decided to push the search query and the sort parameters through the URL routing. For example, you're able to revisit the site with a search parameter inline and it will display the results (`http://am-news.s3-website-us-east-1.amazonaws.com/?q=bitcoin&sortBy=popularity`, for example).
+- Adds and uses `reactstrap` and Bootstrap for the basic components, and rolled in a custom SCSS manifest of required minimum styles for this project to function.
+- Included a (reactstrap) Tooltip and showed some default behaviors for when the search is attempted to be submitted without a query
+- Some basic font imports and a little nicer subjective styling decisions made (added the date stamp to the article image area)
+
+_Production / time permitting roadmap:_
+
+- In production I might use a better form package like Formik or Redux-Form, but wanted to keep it simple here
+- I'd certainly add tests around the reducer and basic snapshot tests for the larger components
+
 ## Tests
 
 1. `yarn test`

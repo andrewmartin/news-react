@@ -62,7 +62,6 @@ export default class Search extends Component {
             placeholder="Search for articles..."
           />
           <SearchDropdown onChange={this.onSearchChange} />
-
           <Button color="primary">Submit</Button>
         </Form>
       </>
