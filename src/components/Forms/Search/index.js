@@ -9,10 +9,13 @@ export default class Search extends Component {
   constructor(props) {
     super(props);
 
+    const {
+      query: { q },
+    } = props;
+
     this.state = {
-      q: '',
+      q,
       sortBy: '',
-      hasSearched: false, // only show tooltip after we've searched once
     };
 
     this.search = createRef(); // only needed for <Tooltip /> example
@@ -33,33 +36,19 @@ export default class Search extends Component {
   submit = e => {
     e.preventDefault();
     const { onSubmit } = this.props;
-    const { q, sortBy, hasSearched } = this.state;
+    const { q, sortBy } = this.state;
 
-    if (!hasSearched) {
-      // this is simply a bonus feature to show the tooltip
-      // on the first and any subsequent searches only.
-      // we check for its value here beacuse we
-      // only want to set the state once, on the first submit.
-      this.setState({
-        hasSearched: true,
-      });
-    }
-
-    if (!q) {
-      return;
-    }
-
-    if (onSubmit) {
+    if (onSubmit && q) {
       onSubmit({ q, sortBy });
     }
   };
 
   render() {
-    const { q, hasSearched } = this.state;
+    const { q } = this.state;
 
     return (
       <>
-        {this.search.current && !q && hasSearched && (
+        {this.search.current && !q && (
           <Tooltip isOpen={!q} placement="bottom" target={this.search.current}>
             Please enter a search term.
           </Tooltip>
@@ -68,6 +57,7 @@ export default class Search extends Component {
           <input
             ref={this.search}
             className={styles.input}
+            defaultValue={q}
             onChange={this.onInputChange}
             placeholder="Search for articles..."
           />

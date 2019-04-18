@@ -12,6 +12,7 @@ import styles from './Home.module.scss';
 class Home extends Component {
   render() {
     const { articles } = this.props;
+    console.log('this.props', this.props);
 
     return (
       <div className={styles.home}>
