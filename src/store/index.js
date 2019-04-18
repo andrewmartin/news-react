@@ -1,12 +1,10 @@
 import { applyMiddleware, compose, createStore } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist';
 
 import api from 'api';
 import { createBrowserHistory } from 'history';
 import rootReducer from 'reducers';
 import { routerMiddleware } from 'connected-react-router';
 import thunk from 'redux-thunk';
-import storage from 'redux-persist/lib/storage';
 
 export const history = createBrowserHistory();
 
@@ -24,19 +22,12 @@ export default () => {
     }
   }
 
-  const persistConfig = {
-    key: 'root',
-    storage,
-  };
-
-  const persistedReducer = persistReducer(persistConfig, rootReducer(history));
   const composedEnhancers = compose(
     applyMiddleware(...middleware),
     ...enhancers
   );
 
-  const store = createStore(persistedReducer, initialState, composedEnhancers);
-  const persistor = persistStore(store);
+  const store = createStore(rootReducer(history), initialState, composedEnhancers);
 
-  return { store, persistor };
+  return { store };
 };
