@@ -38,12 +38,12 @@ _Production / time permitting roadmap:_
 
 This is a high level view of the notable files and directories in this application:
 
-```
+```bash
 ├── .eslintrc.js -> custom eslint config
 ├── .env -> app environment
 ├── .prettierrc -> prettier config
 ├── api -> api singleton (uses `axios`)
-├── components -> shared components
+├── components -> shared components; sub components broken down by main index directory
 ├── containers -> app containers
 ├── index.js -> app entry and render call
 ├── index.scss -> global styles (mostly resets, font imports)
