@@ -1,18 +1,24 @@
 @import "src/styles/variables";
-@import "src/styles/mixins";
 
 .header {
+  padding: 25px 0;
   color: #fff;
-  background: $gray-dark;
+  background: $gray-darker;
+}
+
+.logo {
+  margin: 0 25px 0 0;
+  text-transform: lowercase;
+  color: $primary;
+  font-size: 30px;
+  font-weight: 200;
 }
 
 .container {
-  @include container;
   display: flex;
   align-items: center;
 }
 
 .button {
-  @include button;
   margin-left: auto;
 }

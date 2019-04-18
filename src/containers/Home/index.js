@@ -1,30 +1,46 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Container, Row, Col } from 'reactstrap';
+
+import { selectArticles } from 'selectors/article';
 import { actions as articleActions } from 'reducers/article';
+import { ArticleIndex } from 'components/Article';
 
 import styles from './Home.module.scss';
 
 class Home extends Component {
-  componentDidMount() {
-    const {
-      actions: { getArticles },
-    } = this.props;
-
-    getArticles();
-  }
-
   render() {
+    const { articles } = this.props;
+
     return (
       <div className={styles.home}>
-        <h2>Home</h2>
+        <Container>
+          <Row>
+            <Col>
+              <Row>
+                {articles.length ? (
+                  articles.map(article => (
+                    <Col key={article.title} md={6}>
+                      <ArticleIndex {...article} />
+                    </Col>
+                  ))
+                ) : (
+                  <Col>
+                    <p>No items found. Please search for articles above or try a different query.</p>
+                  </Col>
+                )}
+              </Row>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ article }) => ({
-  article,
+const mapStateToProps = state => ({
+  articles: selectArticles(state),
 });
 
 const mapDispatchToProps = dispatch => ({
