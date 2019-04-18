@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.3.2",
     "customize-cra": "^0.2.12",
@@ -23,12 +24,12 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^2.1.8",
+    "reactstrap": "^8.0.0",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.5",
     "redux-persist": "^5.10.0",
     "redux-persist-transform-filter": "^0.0.18",
-    "redux-thunk": "^2.3.0",
-    "sanitize.css": "^8.0.0"
+    "redux-thunk": "^2.3.0"
   },
   "lint-staged": {
     "concurrent": false,
