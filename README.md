@@ -1,34 +1,10 @@
-# Create React App - Boilerplate
+# News API
 
-This is a custom invocation of some sensible defaults for Create React App, based on practices I find most efficient when building React/Redux applications.
+This is a demo application using the [News API](https://newsapi.org/) service. It uses `react`, `react-redux`, and several other packages to display items using their API.
 
-It includes:
+[Demo](http://am-news.s3-website-us-east-1.amazonaws.com/)
 
-- `redux` and `redux-thunk`
-- `redux-actions`
-- `connected-react-router`
-- `redux-persist`
-- `node-sass`
-- `axios` and a vanilla API constructor singleton pattern
-- `classnames`
-
-It also has some default setup related to my preferred lint standards:
-
-- `husky` for pre-commit linting
-- `eslint-config-airbnb` (and related packages required to run linting)
-- `prettier`
-- ...and several other packages related to linting. Please see `package.json` and `.eslintrc.js` for specifics.
-
-It suggests and uses `NODE_PATH=src/` in the `.env` for absolute module importing.
-
-## Create React App Overrides
-
-I'm using `react-app-rewired` and `customize-cra` to:
-
-1. Setup `react-hot-loader`
-1. Setup `eslint`
-
-(See `config-overrides.js` for this 2 line setup).
+It includes some customizations and is branched from [`create-react-app`](https://github.com/facebook/create-react-app). See below for an explanation of the structure of the application and the packages chosen.
 
 ## Quickstart
 
@@ -61,3 +37,35 @@ This is a high level view of the notable files and directories in this applicati
 ```
 
 The general pattern held here is that those files in `containers` will hold the `mapStateToProps` assignments only, and pass down to other containers.
+
+### Application Setup
+
+This is a custom invocation of some sensible defaults for Create React App, based on practices I find most efficient when building React/Redux applications.
+
+It includes:
+
+- `redux` and `redux-thunk`
+- `redux-actions`
+- `connected-react-router`
+- `redux-persist`
+- `node-sass`
+- `axios` and a vanilla API constructor singleton pattern
+- `classnames`
+
+It also has some default setup related to my preferred lint standards:
+
+- `husky` for pre-commit linting
+- `eslint-config-airbnb` (and related packages required to run linting)
+- `prettier`
+- ...and several other packages related to linting. Please see `package.json` and `.eslintrc.js` for specifics.
+
+It suggests and uses `NODE_PATH=src/` in the `.env` for absolute module importing.
+
+## Create React App Overrides
+
+I'm using `react-app-rewired` and `customize-cra` to:
+
+1. Setup `react-hot-loader`
+2. Setup `eslint`
+
+(See `config-overrides.js` for this 2 line setup).
