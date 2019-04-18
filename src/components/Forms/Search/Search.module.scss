@@ -1,0 +1,31 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/forms";
+
+@import "src/styles/variables";
+
+.form {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-left: 15px;
+}
+
+.input {
+  width: 100%;
+  margin-right: 5px;
+  padding: 6px 15px;
+  transition: all .2s ease-out;
+  color: #fff;
+  border: 1px solid $gray-darker;
+  background: $gray-dark;
+
+  &:focus,
+  &:active,
+  &:hover {
+    border-color: $primary;
+    outline: none;
+    box-shadow: none;
+  }
+}
