@@ -49,7 +49,7 @@ export default class Search extends Component {
     return (
       <>
         {this.search.current && !q && (
-          <Tooltip isOpen={!q} placement="bottom" target={this.search.current}>
+          <Tooltip isOpen placement="bottom" target={this.search.current}>
             Please enter a search term.
           </Tooltip>
         )}
