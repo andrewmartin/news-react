@@ -12,7 +12,7 @@ This app includes some customizations and is branched from [`create-react-app`](
 
 ## Quickstart
 
-1. Copy `.env-example` to `.env` in the project root, updating parameters if necessary.
+1. Copy `.env-example` to `.env` in the project root, updating parameters if necessary. Most likely, you will want to use `REACT_APP_API_ROOT=https://newsapi.org/v2/` as your base URL and add your own key.
 2. `yarn` and `yarn start`
 
 _We are using `husky` to enforce the linting rules before committing. Invalid lint rules will attempted to be fixed if found, and prevented from being committed._
