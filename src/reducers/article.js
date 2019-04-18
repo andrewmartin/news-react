@@ -3,22 +3,15 @@ import { createAction, handleActions } from 'redux-actions';
 import { parseError } from 'store/helpers';
 
 const fetchArticleStart = createAction('article/FETCH_START');
-const setUserToken = createAction('article/SET_TOKEN');
 const getArticles = createAction('article/FETCH_ARTICLES');
 const articleError = createAction('article/ERROR');
-const logoutUser = createAction('article/LOGOUT');
 
 export const actions = {
-  setToken: token => dispatch => dispatch(setUserToken(token)),
-
-  getArticles: () => async (dispatch, state, { api }) => {
+  getArticles: params => async (dispatch, state, { api }) => {
     dispatch(fetchArticleStart());
-
     try {
       const data = await api.get('everything', {
-        params: {
-          q: 'test',
-        },
+        params,
       });
       return dispatch(getArticles(data));
     } catch (error) {
@@ -29,8 +22,6 @@ export const actions = {
       );
     }
   },
-
-  logoutUser: () => dispatch => dispatch(logoutUser()),
 };
 
 export const defaultState = {
@@ -47,14 +38,6 @@ export default handleActions(
           ...state,
           isLoading: true,
           serverError: null,
-        };
-      },
-    },
-    [setUserToken]: {
-      next: (state, { payload }) => {
-        return {
-          ...state,
-          token: payload,
         };
       },
     },
